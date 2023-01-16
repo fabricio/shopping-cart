@@ -1,0 +1,23 @@
+<div class="shadow-md max-w-sm border-t"  *ngFor="let product of products">
+  <img class="w-full h-96 p-10 bg-slate-200" src="{{ product.image}}" alt="Photo of {{ product.name }}">
+  <div class="bg-white">
+    <div class="px-6 py-4">
+      <h3 class="font-bold text-xl mb-2">
+        <a [title]="product.name + 'details'">
+          {{ product.name }}
+        </a>
+      </h3>
+      <p class="text-gray-700 text-base" *ngIf="product.description">
+        Description: {{product.description}}
+      </p>
+    </div>
+    <div class="px-6 pt-4 pb-2">
+      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{product.type}}</span>
+    </div>
+    <button class="text-white uppercase font-bold bg-blue-500 w-full p-4 ">
+      buy ${{product.price.toFixed(2)}}
+    </button>
+
+  </div>
+
+</div>
